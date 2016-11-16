@@ -1,0 +1,66 @@
+
+<div ng-controller="VehicleController">
+    <h2>&nbsp; Vehicle </h2>
+    <select name="" ng-Change="getYears(BrandName)" ng-model="BrandName" ng-options="brand as brand.name for brand in brands track by brand.id">
+
+    </select>
+
+    <select name="" ng-Change="getModels(YearName,BrandName)" ng-model="YearName" ng-options="year as year.name for year in years track by year.id"></select>
+
+    <select name="" ng-model="ModelName" ng-options="model as model.name for model in models track by model.id"></select>
+
+
+
+</div>
+
+
+<div ng-controller="PricingController">
+    <h2>&nbsp;Service</h2>
+    <select name="" id="category" ng-Change="getServices(categoryName)" ng-model="categoryName" ng-options="cat as cat.name for cat in myData track by cat.id">
+
+    </select>
+
+    <select name="" ng-Change="getSBrands(ServiceName); getSOptionals(ServiceName);"  ng-model="ServiceName" ng-options="ser as ser.name for ser in cat_services track by ser.id"></select>
+
+    <select name="" ng-Change="getBServices(SBrandName)" ng-model="SBrandName" ng-options="s_brand as s_brand.name for s_brand in s_brands track by s_brand.id"></select>
+    <div ng-repeat="s_brand_service in s_brand_services">
+        <!-- typing here should auto update it's preview above -->
+        <label ng-model="s_brand_service.name">{{s_brand_service.name}}</label>
+        <input name="brand_service_prices[]" type="text" ng-disabled="checked" />
+        <label>Use Default price: <input name="brand_service_default[]" type="checkbox" ng-model="checked" value="{{s_brand_service.id}}"></label>
+        <!-- many other fields here that will also affect the preview -->
+    </div>
+
+
+    <br/>
+    <br/>
+    <div ng-repeat="s_optional in s_optionals">
+        <!-- typing here should auto update it's preview above -->
+        <label ng-model="s_optional.name">{{s_optional.name}}</label>
+        <input name="s_optional_prices[]" type="text" ng-disabled="checked" />
+        <label>Use Default price: <input name="s_optional_default[]" type="checkbox" ng-model="checked" value="{{s_optional.id}}"></label>
+        <!-- many other fields here that will also affect the preview -->
+    </div>
+
+
+    <!--<select name="" ng-Change="BrandServices" ng-model="BrandServices" ng-options="s_brand_service as s_brand_service.name for s_brand_service in s_brand_services track by s_brand_service.id"></select>-->
+
+
+</div>
+
+<br/>
+
+<!--
+<div ng-controller="PricingController">
+    <h2>&nbsp; Welcome to Pricing Form</h2>
+    <select name="" id="category" ngChange="getServices(categoryName)" ng-model="categoryName">
+        <option value="{{cat.id}}" ng-repeat="cat in myData">
+            {{cat.name}}
+        </option>
+    </select>
+
+    <select name="" id="Services">
+        <option value="" ></option>
+    </select>
+</div>
+-->

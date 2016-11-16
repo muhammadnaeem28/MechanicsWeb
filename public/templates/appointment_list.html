@@ -1,0 +1,87 @@
+<div class="page-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <h1 class="pull-left"><b>Appointments</b></h1>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="set-verticaly-center header-add-btn">
+                                <!--<button type="button" class="btn btn-circle btn-default pull-right">Get a new Quotes</button>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- my bookable quote-->
+    <div class="row" ng-repeat="item in appointmentsList">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light my-portlet">
+                <div class="row">
+                    <div class="col-lg-2 col-md-12 col-sm-2 set-verticaly-center  your-price" style="">
+                        <div class="text-center">
+                            <small class="font-grey-silver">Total price</small>
+                            <!--<h4><strong>$108.61</strong></h4>-->
+                            <h4><strong>${{item.total_price}}</strong></h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-12 col-md-10 col-sm-10">
+                        <div class="portlet-title">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4"  >
+                                    <small class="font-grey-silver">Your car</small><br>
+                                    <strong>{{item.year_name}} {{item.brand_name}} {{item.model_name}} {{item.trim_name}}</strong>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-sm-3"  >
+                                    <small class="font-grey-silver">Quote requested on</small><br>
+                                    <!--<strong>Sunday August 7, 2016</strong>-->
+                                    <strong ng-bind="formatDate(item.created_at)"></strong>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <small class="font-grey-silver">Status</small><br>
+                                    <strong ng-if="item.status == 'pending'" class="font-blue">{{ item.status }}</strong>
+                                    <strong ng-if="item.status == 'Scheduled'" class="font-green">{{ item.status }}</strong>
+                                </div>
+                                <div class="col-lg-1 col-md-2 col-sm-2"  >
+
+                                    <div class="btn-group pull-right">
+                                        <a class="btn default" href="javascript:;" data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                            <!--<i class="fa fa-angle-down"></i>-->
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="padding-tb-10">
+                                                <a class="font-red" ng-click="cancelAppointment(item)">
+                                                    <i class="fa fa-trash-o font-red"></i> Cancel </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <!--<small class="font-grey-silver">Your services ({{item.total_services}})</small>-->
+                                    <h4 class="font-blue padding-tb-10"><strong>
+                                        <a ng-click="showAppointmentInfo(item)">View details</a></strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end my bookable quote-->
+
+
+
+
+</div>

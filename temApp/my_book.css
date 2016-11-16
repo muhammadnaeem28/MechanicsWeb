@@ -1,0 +1,240 @@
+html,body{
+    height:100%;
+}
+.page-header-fixed .my-book.page-container{
+    margin-top: 0;
+}
+.my-book .page-content-wrapper .page-content{
+    margin-left: 0;
+}
+/*.form-wizard .steps>li>a.step>.number{*/
+    /*display: block;*/
+    /*margin: auto;*/
+    /*padding: 11px 10px 13px;*/
+
+/*}*/
+.my-book .portlet.light .portlet-body{
+    padding-bottom: 20px;
+}
+.my-book .car-list .table-hover>tbody>tr{
+    width: 100%;
+}
+.my-book .car-list .table-hover>tbody>tr:hover{
+    background-color: transparent;
+}
+.my-book .car-list .list-group .list-group-item .item-check-icon{
+    float: right;
+    display: none;
+}
+.my-book .car-list .list-group .list-group-item{
+    border: none;
+    margin: 5px 0;
+}
+.my-book .car-list .list-group .list-group-item:hover{
+    box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+}
+.my-book .car-list .list-group .list-group-item:hover .item-check-icon,
+.my-book .car-list .list-group .list-group-item:active .item-check-icon
+.my-book .car-list .list-group .list-group-item:focus .item-check-icon{
+    display: inline-block;
+}
+.my-book .services-box .main-tab .nav-tabs{
+    margin-bottom: 0;
+    border: none;
+}
+.my-book .services-box .main-tab .nav-tabs>li{
+    width: 50%;
+    text-align: center;
+    border: none;
+}
+.my-book .services-box .main-tab .search-input{
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    background-color: #F7F7F7;
+}
+.my-book .services-box .main-tab .search-input div{
+    width: 80%;
+    margin: 20px auto;
+}
+.my-book .services-box .main-tab .search-input .input-icon>i{
+    margin: 15px 2px 4px 10px;
+}
+.my-book .services-box .main-tab .search-input div input{
+    width: 100% !important;
+}
+.my-book .services-box .main-tab .nav-tabs>li.active>a,
+.my-book .services-box .main-tab .nav-tabs>li>a,
+.my-book .services-box .main-tab .nav-tabs>li>a:hover{
+    padding: 20px 0;
+    color: black;
+    border: none;
+    margin-right:0;
+}
+.my-book .services-box .main-tab .nav-tabs>li.active>a,
+.my-book .services-box .main-tab .nav-tabs>li.active>a:focus,
+.my-book .services-box .main-tab .nav-tabs>li.active>a:hover{
+    background-color: #F7F7F7;
+    color:black;
+    border: none;
+    padding: 20px 0;
+}
+.my-book .tab-services{
+    margin-left: 0;
+    margin-right: 0;
+
+}
+.my-book .tab-services .tab-services-side-menu-list{
+    background-color: #F7F7F7;
+    border-top: 1px solid #e7ebeb;
+    border-right: 1px solid #e7ebeb;
+}
+.my-book .tab-services .tab-services-side-menu-list ul{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+.my-book .tab-services .tab-services-side-menu-list li{
+    margin: 10px 0;
+
+}
+.my-book .tab-services .tab-services-side-menu-list li a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.33);
+}
+.my-book .tab-services .tab-services-side-menu-list li a:hover{
+    color: black;
+}
+.my-book .tab-services .tab-services-side-menu-list li.active>a,
+.my-book .tab-services .tab-services-side-menu-list li.active>a:focus,
+.my-book .tab-services .tab-services-side-menu-list li.active>a:hover{
+    color: black;
+    font-weight: bold;
+}
+.my-book .tab-services-side-list{
+    padding: 0;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.my-book .tab-services-side-list p{
+    border: 1px solid #e7ebeb;
+    margin-bottom: 0;
+    padding: 5px 20px;
+}
+.my-book .tab-services-side-list .list-group{
+    margin-bottom: 0;
+}
+.my-book .tab-services-side-list .list-group .list-group-item{
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+.my-book .tab-services-side-list .list-group .list-group-item .fa{
+    padding-right: 10px;
+    font-size: 20px;
+    vertical-align: middle;
+    color: #A4C5FF;
+}
+.my-book .tab-services-side-list .list-group .list-group-item span{
+    float: right;
+}
+/*sub-question*/
+
+.my-book .sub-question{
+}
+.my-book .sub-question .timeline:before{
+    margin-left: 13px;
+}
+.my-book .sub-question .timeline .timeline-badge{
+    top: 12px;
+}
+.my-book .sub-question .timeline .timeline-badge-userpic{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+}
+.my-book .sub-question .timeline .timeline-body{
+    margin-left: 50px;
+}
+.my-book .sub-question .timeline .timeline-body-arrow{
+    top: 15px;
+}
+.my-book .sub-question .timeline-body .timeline-body-content{
+    margin-top: 0;
+}
+.my-book .sub-question .timeline-body .heading h4{
+    width: 80%;
+    display: inline-block;
+}
+.my-book .sub-question .timeline-body .heading span{
+    float: right;
+}
+
+/*end sub-question*/
+/*shoping-cart*/
+.my-book .shoping-cart{
+    position: fixed;
+    right: 0;
+}
+.my-book .shoping-cart .portlet.light {
+    padding: 0;
+}
+.my-book .shoping-cart .portlet.light>.portlet-title{
+
+    padding: 15px;
+    background-color: #218be7;
+    color: white;
+}
+.my-book .shoping-cart .portlet.light>.portlet-body{
+    padding: 15px;
+}
+.my-book .shoping-cart .price-title{
+    font-size: 10px;
+}
+.my-book .shoping-cart .price{
+    font-size: 25px;
+}
+.my-book .shoping-cart .portlet.light>.portlet-body h3{
+    margin-top: 0;
+}
+.my-book .shoping-cart .portlet.light>.portlet-body a{
+    color: black;
+}
+.my-book .shoping-cart .portlet.light>.portlet-body .list-group .list-group-item,
+.my-book .shoping-cart .portlet.light>.portlet-body .list-group .list-group-item:hover{
+    border: none;
+    background-color: transparent;
+}
+.my-book .shoping-cart .portlet.light>.portlet-body .list-group .list-group-item .md-checkbox{
+    display: inline;
+}
+.my-book .shoping-cart .portlet.light>.portlet-body .list-group .list-group-item button{
+    display: inline;
+    top: -6px;
+}
+.my-book .shoping-cart .portlet.light>.footer{
+    background-color: #F7F7F7;
+    padding: 15px;
+
+}
+.my-book .shoping-cart .portlet.light>.footer a{
+    display: block;
+    color: #6d7579;
+}
+.my-book .shoping-cart .portlet.light>.footer a:hover{
+    color: black;
+    text-decoration: none;
+}
+@media (max-width: 767px){
+    .my-book .tab-services .tab-services-side-menu-list{
+        border-right: none;
+    }
+    .my-book .tab-services .tab-services-side-menu-list li{
+        display: inline-block;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+

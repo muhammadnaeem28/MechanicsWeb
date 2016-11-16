@@ -1,0 +1,86 @@
+<div class="page-content">
+    <!-- my cars-->
+    <div class="row my_carInfo">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <a href="#" class="my-portlet">
+                <div class="portlet light my-portlet">
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <a ui-sref="dashboard.quoteslist" class="btn btn-sm btn-circle dark pull-left">
+                                    <i class="fa fa-long-arrow-left"></i> Back </a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <a  class="btn btn-sm btn-circle red pull-right" ng-click="deleteQuote(quoteInfo)">
+                                    <i class="fa fa-trash-o"></i> Delete</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h2><strong>Quote #{{quoteInfo.quote_number}}</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--end my cars-->
+
+    <div class="row">
+        <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="quoteInfo.status == 'Requested'">-->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light">
+                <div class="portlet-title">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <small class="font-grey-silver">Quote Number</small><br>
+                            <!--<strong>1321213</strong>-->
+                            <strong>{{quoteInfo.quote_number}}</strong>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <small class="font-grey-silver">Your car</small><br>
+                            <strong>{{quoteInfo.year_name}} {{quoteInfo.brand_name}} {{quoteInfo.model_name}} {{quoteInfo.trim_name}}</strong>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <small class="font-grey-silver">Quote requested on</small><br>
+                            <!--<strong>Sunday August 7, 2016</strong>-->
+                            <strong ng-bind="formatDate(quoteInfo.created_at)"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row" ng-if="quoteInfo.status == 'Bookable'">
+                                <div class="col-lg-4">
+                                    <h4><strong>Your Price</strong></h4>
+                                </div>
+                                <div class="col-lg-8">
+                                    <h5><strong>${{quoteInfo.total_price}}</strong></h5>
+                                </div>
+
+                            </div>
+                            <hr ng-if="quoteInfo.status == 'Bookable'" style="margin: 10px auto">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <h4><strong>Your Services</strong></h4>
+                                </div>
+                                <div class="col-lg-8" style="border-left: 1px solid grey">
+                                    <div ng-repeat="item in quoteServicesInfo">
+                                        <h5><strong>{{item.s_name}}</strong></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="my-portlet" ng-if="quoteInfo.status == 'Bookable'">-->
+    </div>
+
+
+
+
+</div>

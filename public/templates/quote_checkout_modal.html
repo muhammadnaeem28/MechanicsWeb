@@ -1,0 +1,92 @@
+<div class="modal fade in" role="dialog" style="display:table">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="cancel()" aria-hidden="true"></button>
+                <h4 class="modal-title text-center"><b>Book Appointment Form</b></h4>
+            </div>
+            <div class="modal-body form ativa-scroll" >
+                <!-- BEGIN FORM-->
+                <form name="addressForm" class="form-horizontal" novalidate ng-submit="ok(userAddress)" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <pre>Selected time and date is: <em>{{date | date:'shortTime' }}, {{date | date:'fullDate' }}</em></pre>
+                                <datetimepicker
+                                        hour-step="hourStep"
+                                        minute-step="minuteStep"
+                                        ng-model="date"
+                                        show-meridian="showMeridian"
+                                        date-format="{{format}}"
+                                        date-options="dateOptions"
+                                        date-disabled="disabled(date, mode)"
+                                        datepicker-append-to-body="false"
+                                        readonly-date="false"
+                                        disabled-date="false"
+                                        hidden-time="false"
+                                        hidden-date="false"
+                                        name="datetimepicker"
+                                        show-spinners="true"
+                                        readonly-time="false"
+                                        date-opened="dateOpened"
+                                        show-button-bar="false"
+                                <!-- Use date-ng-click="open($event, opened)" to override date ng-click -->
+                                </datetimepicker>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Phone Number
+                                <span class="required"> * </span>
+                            </label>
+                            <div class="col-md-8">
+                                <input type="tel" name="name" class="form-control" ng-model="userAddress.phoneNumber" required/> </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Address&nbsp;&nbsp;<span class="required"> * </span></label>
+                            <div class="col-md-8">
+                                <textarea  type="text" rows="4" class="form-control" ng-model="userAddress.address" required></textarea> </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Note&nbsp;&nbsp;</label>
+                            <div class="col-md-8">
+                                <textarea  type="text" rows="4" class="form-control" ng-model="userAddress.note"></textarea> </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Payment Method
+                                <span class="required"> * </span>
+                            </label>
+                            <div class="col-md-4">
+                                <div class="radio-list">
+                                    <label>
+                                        <input type="radio" name="membership" value="cash" ng-model="userAddress.paymentMethod" checked="true"/> cash </label>
+                                    <label>
+                                        <input type="radio" name="membership" value="card" ng-model="userAddress.paymentMethod"/> card </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" ng-disabled="addressForm.$invalid" class="btn btn-lg green">CheckOut</button>
+                                <button class="btn grey-salsa btn-outline btn-circle btn-lg" ng-click="cancel()" aria-hidden="true">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- END FORM-->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(ajustamodal);
+  $(window).resize(ajustamodal);
+  function ajustamodal() {
+    var altura = $(window).height() - 155; //value corresponding to the modal heading + footer
+    $(".ativa-scroll").css({"height":altura,"overflow-y":"auto","overflow-x":"hidden"});
+  }
+</script>

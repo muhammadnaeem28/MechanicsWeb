@@ -1,0 +1,98 @@
+
+<div class="page-content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+            <h3 class="page-title">
+                Search Pricing
+            </h3>
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    Pricing
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    Search Pricing
+                </li>
+
+            </ul>
+            <!-- END PAGE TITLE & BREADCRUMB-->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box red" >
+                <div class="portlet-title">
+                    <div class="caption">
+                        <b>Search Pricing</b>
+                    </div>
+
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form method="POST" action="/Pricing/search" class="form-horizontal" role="form">
+                        <div class="form-body">
+
+                            <h3 class="text-center">Select vehicle(s) to search its service pricing</h3>
+
+                            <div ng-controller="VehicleController">
+                            <h4>Select Vehicle</h4>
+                                <div class="form-group">
+                                <label class="col-md-3 control-label">Brand</label>
+                                <div class="col-md-8">
+                                    <select name="c_brand" class="form-control" data-live-search="true" ng-Change="getYears(BrandName)" ng-model="BrandName" ng-options="brand as brand.name for brand in brands track by brand.id">       </select>
+                                    <input type="hidden" value="<% BrandName.name %>" name="car_brand"/>
+                                </div>
+                                </div>
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Year</label>
+                                <div class="col-md-8">
+                                    <select name="c_year" class="form-control" ng-Change="getModels(YearName,BrandName)" ng-model="YearName" ng-options="year as year.name for year in years track by year.id"></select>
+                                    <input type="hidden" value="<% YearName.name  %>" name="car_year"/>
+                                </div>
+                            </div>
+
+
+<!--
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Model</label>
+                                <div class="col-md-8">
+                                    <select name="c_model" class="form-control" ng-model="ModelName" ng-options="model as model.name for model in models track by model.id"></select>
+                                    <input type="hidden" value="<% ModelName.name  %>" name="car_model"/>
+                                    &lt;!&ndash;<input type="hidden" value="<% ModelName.name %>" name="car_models[]"/>&ndash;&gt;
+                                    &lt;!&ndash;<small><i style="color:#979797">select multiple models using "Ctrl + click"</i></small>&ndash;&gt;
+
+                                </div>
+                            </div>
+-->
+
+                            </div>
+
+                        </div>
+                        <br/>
+                        <br/>
+
+                        <div class="form-actions fluid">
+
+                            <div class="col-md-offset-5 col-md-6">
+                                <button type="submit" class="btn green">Search</button>
+                            </div>
+
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

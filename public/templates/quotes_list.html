@@ -1,0 +1,243 @@
+<div class="page-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <h1 class="pull-left"><b>Quotes</b></h1>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="set-verticaly-center header-add-btn">
+                                <!--<button type="button" class="btn btn-circle btn-default pull-right">Get a new Quotes</button>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="padding-tb-20" ng-if="requestedQuotes.length > 0">
+        <button type="button" class="btn btn-circle default">requested quote</button>
+    </div>
+    <!--<strong>requested quote</strong>-->
+
+    <!-- my requested quote-->
+    <div class="row" ng-repeat="item in requestedQuotes">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light">
+                <div class="portlet-title">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3"  >
+                            <small class="font-grey-silver">Quote Number</small><br>
+                            <strong>{{item.quote_number}}</strong>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"  >
+                            <small class="font-grey-silver">Your car</small><br>
+                            <strong>{{item.year_name}} {{item.brand_name}} {{item.model_name}} {{item.trim_name}}</strong>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3"  >
+                            <small class="font-grey-silver">Quote requested on</small><br>
+                            <strong ng-bind="formatDate(item.created_at)"></strong>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"  >
+
+                            <div class="btn-group pull-right">
+                                <a class="btn default" href="javascript:;" data-toggle="dropdown">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                    <!--<i class="fa fa-angle-down"></i>-->
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="padding-tb-10">
+                                        <a ng-click="deleteQuote(item)" class="font-red">
+                                            <i class="fa fa-trash-o font-red"></i> Delete </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <small class="font-grey-silver">Your services ({{item.total_services}})</small>
+                            <h4><strong>{{item.service1_name}}</strong></h4>
+                            <h4 class="font-blue padding-tb-10"><strong><a ng-click="showQuoteInfo(item)">View details</a></strong></h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end my requested quote-->
+
+    <div class="padding-tb-20" ng-if="bookAbleQuotes.length > 0">
+        <button type="button" class="btn btn-circle default">bookable quotes</button>
+    </div>
+
+    <!-- my bookable quote-->
+    <div class="row" ng-repeat="item in bookAbleQuotes">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light my-portlet">
+                <div class="row">
+                    <div class="col-lg-2 col-md-12 col-sm-2 set-verticaly-center  your-price" style="">
+                        <div class="text-center">
+                            <small class="font-grey-silver">Your price</small>
+                            <!--<h4><strong>$108.61</strong></h4>-->
+                            <h4><strong>${{item.total_price}}</strong></h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-12 col-md-10 col-sm-10">
+                        <div class="portlet-title">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3"  >
+                                    <small class="font-grey-silver">Quote Number</small><br>
+                                    <strong>{{item.quote_number}}</strong>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4"  >
+                                    <small class="font-grey-silver">Your car</small><br>
+                                    <strong>{{item.year_name}} {{item.brand_name}} {{item.model_name}} {{item.trim_name}}</strong>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3"  >
+                                    <small class="font-grey-silver">Quote requested on</small><br>
+                                    <!--<strong>Sunday August 7, 2016</strong>-->
+                                    <strong ng-bind="formatDate(item.created_at)"></strong>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2"  >
+
+                                    <div class="btn-group pull-right">
+                                        <a class="btn default" href="javascript:;" data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                            <!--<i class="fa fa-angle-down"></i>-->
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="padding-tb-10">
+                                                <a ng-click="deleteQuote(item)" class="font-red">
+                                                    <i class="fa fa-trash-o font-red"></i> Delete </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <small class="font-grey-silver">Your services ({{item.total_services}})</small>
+                                    <button type="button" class="btn btn-primary light btn-outline btn-lg pull-right"
+                                             data-toggle="modal" ng-click="showAppointment(item)">book appointment</button>
+                                    <h4><strong>{{item.service1_name}}</strong></h4>
+                                    <h4 class="font-blue padding-tb-10"><strong>
+                                        <a ng-click="showQuoteInfo(item)">View details</a></strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end my bookable quote-->
+
+
+    <!-- modal-->
+    <div id="form_modal11" class="modal fade" role="dialog" aria-labelledby="myModalLabel10" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title text-center"><b>Book Appointment Form</b></h4>
+                </div>
+                <div class="modal-body form" >
+                    <!-- BEGIN FORM-->
+                    <form name="addressForm" class="form-horizontal" novalidate ng-submit="checkOut(userAddress)" method="post">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                        <pre>Selected time and date is: <em>{{date | date:'shortTime' }}, {{date | date:'fullDate' }}</em></pre>
+                                        <datetimepicker
+                                                hour-step="hourStep"
+                                                minute-step="minuteStep"
+                                                ng-model="date"
+                                                show-meridian="showMeridian"
+                                                date-format="{{format}}"
+                                                date-options="dateOptions"
+                                                date-disabled="disabled(date, mode)"
+                                                datepicker-append-to-body="false"
+                                                readonly-date="false"
+                                                disabled-date="false"
+                                                hidden-time="false"
+                                                hidden-date="false"
+                                                name="datetimepicker"
+                                                show-spinners="true"
+                                                readonly-time="false"
+                                                date-opened="dateOpened"
+                                                show-button-bar="false"
+                                        <!-- Use date-ng-click="open($event, opened)" to override date ng-click -->
+                                        </datetimepicker>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Phone Number
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="tel" name="name" class="form-control" ng-model="userAddress.phoneNumber" required/> </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Address&nbsp;&nbsp;<span class="required"> * </span></label>
+                                <div class="col-md-8">
+                                    <textarea  type="text" rows="4" class="form-control" ng-model="userAddress.address" required></textarea> </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Note&nbsp;&nbsp;</label>
+                                <div class="col-md-8">
+                                    <textarea  type="text" rows="4" class="form-control" ng-model="userAddress.note"></textarea> </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Payment Method
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="radio-list">
+                                        <label>
+                                            <input type="radio" name="membership" value="cash" ng-model="userAddress.paymentMethod" checked="true"/> cash </label>
+                                        <label>
+                                            <input type="radio" name="membership" value="card" ng-model="userAddress.paymentMethod"/> card </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" ng-disabled="addressForm.$invalid" class="btn btn-lg green">CheckOut</button>
+                                    <button class="btn grey-salsa btn-outline btn-circle btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+                <!--<div class="modal-footer">-->
+                    <!--<div class="text-center">-->
+                        <!--<button class="btn green btn-circle btn-lg" data-dismiss="modal" ng-click="addCar()">Add</button>-->
+                        <!--<button class="btn grey-salsa btn-outline btn-circle btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
+                    <!--</div>-->
+<!---->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <!-- end modal-->
+
+
+
+</div>

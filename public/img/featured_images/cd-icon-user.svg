@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="24px" viewBox="0 0 18 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>cd-icon-user</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="cd-icon-user" sketch:type="MSLayerGroup" fill="#D8D8D8">
+            <path d="M9,23.036 L3.32169273,23.036 C2.85872781,23.036 0.846470837,22.8452244 0.846470837,20.6361162 C0.846470837,17.6128702 5.91964286,18.1365917 5.91964286,15.0197806 C5.91964286,12.1314142 2.65337067,12.3902371 2.65337067,6.3656175 C2.65337067,2.03732079 5.60613905,0.036 8.68892646,0.036 C8.79280004,0.036 8.89652728,0.0382739569 9,0.0428343432 C9.10347272,0.0382739569 9.20719996,0.036 9.31107354,0.036 C12.3938609,0.036 15.3466293,2.03732079 15.3466293,6.3656175 C15.3466293,12.3902371 12.0803571,12.1314142 12.0803571,15.0197806 C12.0803571,18.1365917 17.1535292,17.6128702 17.1535292,20.6361162 C17.1535292,22.8452244 15.1412722,23.036 14.6783073,23.036 L9,23.036 Z" id="userdelete" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

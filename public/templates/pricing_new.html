@@ -1,0 +1,257 @@
+
+<div class="page-content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+            <h3 class="page-title">
+                Add Pricing
+            </h3>
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    Pricing
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    Add Pricing
+                </li>
+
+            </ul>
+            <!-- END PAGE TITLE & BREADCRUMB-->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box red" >
+                <div class="portlet-title">
+                    <div class="caption">
+                        <b>Add Pricing</b>
+                    </div>
+
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form method="POST" action="/Pricing/add" class="form-horizontal" role="form">
+                        <div class="form-body">
+                            <h4>
+                                <small><b>Note</b></small>
+                                <small><ul>
+                                    <li>Empty price fields will be set to be equal to default price of the service</li>
+                                    <br/>
+                                    <li>Entering pricing for same vehicle and service will result in overwrite the previous entries of it in database</li>
+                                    <br/>
+                                    <li>Status inactive pricing records will be activated automatically on the insertion with new values</li>
+
+                                </ul>
+                                </small>
+                                Select Vehicle
+                            </h4>
+                            <div ng-controller="VehicleController">
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Brand</label>
+                                    <div class="col-md-8">
+                                        <select name="c_brand" class="form-control" data-live-search="true" ng-Change="getYears(BrandName)" ng-model="BrandName" ng-options="brand as brand.name for brand in brands track by brand.id">       </select>
+                                        <input type="hidden" value="<% BrandName.name %>" name="car_brand"/>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Year</label>
+                                    <div class="col-md-8">
+                                        <select name="c_year" class="form-control" ng-Change="getModels(YearName,BrandName)" ng-model="YearName" ng-options="year as year.name for year in years track by year.id"></select>
+                                        <input type="hidden" value="<% YearName.name  %>" name="car_year"/>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Model</label>
+                                    <div class="col-md-8">
+                                        <select name="c_models[]" class="form-control" ng-model="ModelName" ng-options="model as model.name for model in models track by model.id" multiple></select>
+                                        <!--<input type="hidden" value="<% ModelName.name %>" name="car_models[]"/>-->
+                                        <small><i style="color:#979797">select multiple models using "Ctrl + click"</i></small>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <h3 class="text-center">Choose service pricing for above selected vehicle(s)</h3>
+                            <h4>Select Service</h4>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Category</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" data-live-search="true" name="s_category" ng-Change="getServices(categoryName)" ng-model="categoryName" ng-options="cat as cat.name for cat in myData track by cat.id">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Service</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" name="s_category_service" data-live-search="true"  ng-Change="getSBrands(ServiceName); getSOptionals(ServiceName);"  ng-model="ServiceName" ng-options="ser as ser.name for ser in cat_services track by ser.id"></select>
+                                    <input name="s_name" type="hidden" value="<% ServiceName.name  %>" />
+                                    <!--
+                                    <br/>
+                                    <input name="s_name" type="hidden" value="<% ServiceName.name  %>" />
+                                    <input class="s_price_style" name="s_price" type="text" placeholder="Enter Standard price" ng-disabled="checked_p" />
+                                    <input class="s_price_time" name="s_time" type="text" placeholder="Enter service time" ng-disabled="checked_p" id="touchspin_1" />
+                                    <label><input name="s_price_default" type="checkbox" ng-model="checked_p" value="<% ServiceName.id %>" /> Use Default price</label>
+-->
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Service Brand</label>
+                                <div class="col-md-8">
+                                    <!--<input type='hidden' id='s_brand_check' name='s_brands_exist' value='33'/>-->
+<!--
+                                    <select class="form-control s_brand_s" name="s_brand" ng-Change="getBServices(SBrandName)" ng-model="SBrandName" ng-options="s_brand as s_brand.name for s_brand in s_brands track by s_brand.id">
+                                    </select>
+-->
+
+<select class="form-control s_brand_s" name="s_brand" ng-model="SBrandName">
+
+
+    <!--<options ng-selected="{{defaultvalue == value.id}}" ng-repeat="value in vatRates">-->
+        <!--<option ng-repeat="item in partyName" value="{{item._id}}" ng-selected="obj.partyname == item.partyname">{{item.partyname}}-->
+    <option ng-repeat="s_brand in s_brands" value="<% s_brand.id %>" ng-selected="s_brands[0].name" ><% s_brand.name %></option>
+</select>
+
+                                </div>
+                            </div>
+
+<!--
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" ng-model="s_brand_service.name">Enter service time</label>
+                                <div class="col-md-3">
+                                    <input class="s_price_time" name="s_hours" type="text"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <input class="s_price_time" name="s_mints" type="text" />
+                                </div>
+                            </div>
+-->
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" ng-model="s_brand_service.name">Enter price</label>
+                                <div class="col-md-4">
+                                    <input class="form-control s_price_style" name="s_price" type="text" placeholder="Enter price according to the vehicle selected above" ng-disabled="checked_p" />
+                                    <label><input name="s_price_default" type="checkbox" ng-model="checked_p" value="<% ServiceName.id %>" /> Use Default price</label>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+
+
+<!--
+                                <div class="col-md-6">
+                                    <h4>Enter Brand types pricing</h4>
+                                        <div ng-repeat="s_brand_service in s_brand_services">
+                                            <label ng-model="s_brand_service.name"><% s_brand_service.name %></label>
+                                            <br/>
+                                            <input name="bs_name" type="hidden" value="<% s_brand_service.name  %>" />
+
+                                            <input name="brand_service_prices[]" type="text" ng-disabled="checked" placeholder="Enter price" />
+
+                                            <input type="hidden"  value="<% s_brand_service.id %>" name="brand_service_ids[]"  ng-disabled="checked"/>
+                                            <input type="hidden" value="<% s_brand_service.name  %>" name="brand_service_names[]" ng-disabled="checked" />
+
+
+                                            <label><input name="brand_service_default[]" type="checkbox" ng-model="checked" value="<% s_brand_service.id %>"> Use Default price</label>
+                                            <hr>
+                                        </div>
+                                </div>
+-->
+                                <div class="col-md-12" style="border-left: 1px solid #eee">
+                                        <h4>Enter Optional Services pricing</h4>
+                                    <div class="col-md-8" ng-repeat="s_optional in s_optionals" style="border-top:1px solid #eee;margin-bottom:15px " s-Optionals-repeat-directive>
+                                        <div class="col-md-9" >
+                                            <label ng-model="s_optional.name"><% s_optional.name %></label>
+                                            <br/>
+                                            <input class="form-control" name="s_optional_prices[]" type="text" ng-disabled="checked" placeholder="Enter price" />
+
+                                            <input type="hidden" value="<% s_optional.id %>" name="s_optional_ids[]" ng-disabled="checked"/>
+                                            <input type="hidden" value="<% s_optional   .name  %>" name="s_optional_names[]" ng-disabled="checked" />
+
+                                            <label><input name="s_optional_default[]" type="checkbox" ng-model="checked" value="<% s_optional.id %>"> Use Default price</label>
+                                        </div>
+
+<!--
+                                        <div class="col-md-9" style="margin-bottom: 4px">
+                                            <label>Service time</label>
+                                            <input name="s_optional_hours[]" type="text" />
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <input name="s_optional_mints[]" type="text" />
+                                        </div>
+-->
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <br/>
+                        <br/>
+
+                        <div class="form-actions fluid">
+
+                            <div class="col-md-offset-5 col-md-6">
+                                <button type="submit" class="btn green">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="s_optional_timing" style="display: none"></div>
+
+<!--
+<script>
+    $("input[name='s_hours']").TouchSpin({
+        postfix: "Hours"
+    });
+
+    $("input[name='s_mints']").TouchSpin({
+        postfix: "Minutes"
+    });
+
+
+
+</script>
+-->
+<!--
+<script>
+
+    $( ".s_optional_timing" ).one( "click", function() {
+        $("input[name='s_optional_hours[]']").TouchSpin({
+            postfix: "Hours"
+        });
+
+        $("input[name='s_optional_mints[]']").TouchSpin({
+            postfix: "Minutes"
+        });
+
+    });
+</script>-->

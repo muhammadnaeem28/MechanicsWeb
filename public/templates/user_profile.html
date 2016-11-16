@@ -1,0 +1,134 @@
+<div class="page-content">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="portlet light">
+        <div class="portlet-body">
+          <form class="form-horizontal" name="userInfoForm" novalidate>
+            <div class="form-group">
+              <label for="name" class="col-md-4 control-label">Full Name</label>
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="name" name="name" ng-model="user.name" placeholder="Your Name" required>
+                <div ng-show="userInfoForm.$submitted || userInfoForm.name.$touched">
+                  <small class="font-red-sunglo" ng-show="userInfoForm.name.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-md-4 control-label">Email Address</label>
+              <div class="col-md-6">
+                <input type="email" class="form-control" id="email" name="email" ng-model="user.email" placeholder="Your Email"  required>
+                <div ng-show="userInfoForm.$submitted || userInfoForm.email.$touched">
+                  <small class="font-red-sunglo" ng-show="userInfoForm.email.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phonenumber1" class="col-md-4 control-label">Phone Number</label>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" id="phonenumber1" name="phoneNumber" ng-model="user.phonenumber1" placeholder="Your Phone Number" required>
+                <div ng-show="userInfoForm.$submitted || userInfoForm.phoneNumber.$touched">
+                  <small class="font-red-sunglo" ng-show="userInfoForm.phoneNumber.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phonenumber2" class="col-md-4 control-label">Phone Number (optional)</label>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" id="phonenumber2" ng-model="user.phonenumber2" placeholder="Your Phone Number (Optional)"> </div>
+            </div>
+            <div class="form-group">
+              <label for="zipcode" class="col-md-4 control-label">ZIP Code</label>
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="zipcode" name="zipcode" ng-model="user.zipcode" placeholder="Your ZIP Code" required>
+                <div ng-show="userInfoForm.$submitted || userInfoForm.zipcode.$touched">
+                  <small class="font-red-sunglo" ng-show="userInfoForm.zipcode.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address" class="col-md-4 control-label">Address</label>
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="address" name="address" ng-model="user.address" placeholder="Your Address" required>
+                <div ng-show="userInfoForm.$submitted || userInfoForm.address.$touched">
+                  <small class="font-red-sunglo" ng-show="userInfoForm.address.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn blue pull-right" ng-disabled="userInfoForm.$invalid">Save Changes</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="portlet light">
+        <div class="portlet-body">
+          <h3><strong>Change Password</strong></h3>
+          <form class="form-horizontal" name="chagePasswordForm" novalidate>
+            <div class="form-group">
+              <label for="cPassword" class="col-md-4 control-label">Current Password</label>
+              <div class="col-md-6">
+                <input type="password" class="form-control" id="cPassword" name="currentPassword" ng-model="user.currentPassword"  required>
+                <div ng-show="chagePasswordForm.$submitted || chagePasswordForm.currentPassword.$touched">
+                  <small class="font-red-sunglo" ng-show="chagePasswordForm.currentPassword.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="nPassword" class="col-md-4 control-label">New Password</label>
+              <div class="col-md-6">
+                <input type="password" class="form-control" id="nPassword" name="newPassword" ng-model="user.newPassword" required>
+                <div ng-show="chagePasswordForm.$submitted || chagePasswordForm.newPassword.$touched">
+                  <small class="font-red-sunglo" ng-show="chagePasswordForm.newPassword.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="aPassword" class="col-md-4 control-label">Confirm Password</label>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" id="aPassword" name="againPassword" ng-model="user.confirmPassword" required>
+                <div ng-show="chagePasswordForm.$submitted || chagePasswordForm.againPassword.$touched">
+                  <small class="font-red-sunglo" ng-show="chagePasswordForm.againPassword.$error.required">this field is required.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn blue pull-right" ng-disabled="chagePasswordForm.$invalid">Update Password</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- -->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="portlet light">
+        <div class="portlet-body">
+          <h3><strong>SMS Alerts</strong></h3>
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label class="control-label col-md-3">Default Sizes</label>
+              <div class="col-md-9">
+                <input type="checkbox" checked class="make-switch" data-size="small" width="20px">
+                <input type="checkbox" checked class="make-switch" data-size="normal">
+                <input type="checkbox" checked class="make-switch" data-size="large"> </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,127 @@
+.my-dashboard .page-header.navbar.navbar-fixed-top{
+    z-index: 800;
+}
+.my-dashboard .page-header.navbar .top-menu .navbar-nav > li.dropdown > .dropdown-toggle > .badge {
+    top: 12px;
+}
+
+.my-dashboard .page-header.navbar .top-menu .navbar-nav > li.dropdown a.dropdown-toggle{
+    padding-right: 20px !important;
+}
+.my-dashboard .page-sidebar .page-sidebar-menu > li > a{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    min-height: 60px;
+}
+.my-dashboard .set-verticaly-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-dashboard .page-header.navbar .page-logo .logo-default{
+    margin-top: 0;
+}
+/*page header*/
+.my-dashboard .header-add-btn{
+    height: 70px;
+    justify-content: flex-end;
+}
+/*end page header*/
+/*my-portlet*/
+.my-dashboard .my-portlet{
+    color:black;
+}
+.my-dashboard .my-portlet:hover{
+    color: black;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+.my-dashboard .my-portlet .car-info-box{
+    margin-bottom: 20px;
+}
+
+.my-dashboard .my-portlet .car-info-box .img-box{
+    min-height: 200px;
+    max-height: 220px;
+    width: 80%;
+    margin: auto;
+}
+.my-dashboard .my-portlet .car-info-box .img-box img {
+    width: 220px;
+}
+.my-dashboard .my-portlet .services-box{
+    height: 225px;
+}
+.my-dashboard .my-portlet .services-box p{
+    margin-bottom: 0;
+}
+.my-dashboard .my-portlet .services-box h3{
+    line-height: 0;
+}
+.my-dashboard .my-portlet .services-box table{
+    width: 80%;
+    margin-top: 80px;
+}
+.my-dashboard .my-portlet .your-price{
+    border-right: 1px solid  #eee;
+    height: 175px;
+}
+/*end my-portlet*/
+.my-dashboard .health-box{
+    height: 225px;
+    border-left: 1px solid #EEF1F5;
+}
+.my-dashboard .health-not-fond{
+    border: 10px solid lightblue;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    border-radius: 100%;
+
+}
+/* car Info*/
+.my-dashboard .my_carInfo .row{
+    margin-bottom: 10px;
+}
+
+
+
+.my-dashboard .page-content-wrapper, .my-dashboard .page-footer{
+    background-color: #26344b ;
+}
+@media (max-width: 767px){
+    .my-dashboard .page-header.navbar .top-menu .navbar-nav {
+        background-color: white;
+    }
+    .my-dashboard .health-box{
+        border: none;
+    }
+    .my-dashboard .my-portlet .your-price{
+        border-right: none;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+    .my-dashboard .health-box{
+        border: none;
+    }
+    .my-dashboard .my-portlet .your-price{
+        border-right: none;
+    }
+}
+@media (min-width: 992px){
+    .my-dashboard .page-header.navbar .page-logo{
+        width: 270px;
+    }
+    .my-dashboard .page-sidebar {
+       width: 270px;
+    }
+    .my-dashboard .page-content-wrapper .page-content {
+        margin-left: 270px;
+    }
+}
+@media (min-width: 1200px){
+    .my-dashboard .my-portlet .car-info-box .img-box{
+        max-height: inherit;
+    }
+}

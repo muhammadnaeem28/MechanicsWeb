@@ -1,0 +1,131 @@
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown > .dropdown-toggle > .badge {
+    top: 12px;
+}
+/*.page-header.navbar .top-menu .navbar-nav > li.dropdown > .dropdown-toggle:last-child{*/
+    /*padding-right: auto;*/
+/*}*/
+.page-header.navbar .top-menu .navbar-nav > li.dropdown a.dropdown-toggle{
+    padding-right: 20px !important;
+}
+.page-sidebar .page-sidebar-menu > li > a{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    min-height: 60px;
+}
+.set-verticaly-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-header.navbar .page-logo .logo-default{
+    margin-top: 0;
+}
+/*page header*/
+.header-add-btn{
+    height: 70px;
+    justify-content: flex-end;
+}
+/*end page header*/
+/*my-portlet*/
+.my-portlet{
+    color:black;
+}
+.my-portlet:hover{
+    color: black;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+.my-portlet .car-info-box{
+    margin-bottom: 20px;
+}
+
+.my-portlet .car-info-box .img-box{
+    min-height: 200px;
+    max-height: 220px;
+    width: 80%;
+    margin: auto;
+}
+.my-portlet .car-info-box .img-box img {
+    width: 220px;
+}
+.my-portlet .services-box{
+    height: 225px;
+}
+.my-portlet .services-box p{
+    margin-bottom: 0;
+}
+.my-portlet .services-box h3{
+    line-height: 0;
+}
+.my-portlet .services-box table{
+    width: 80%;
+    margin-top: 80px;
+}
+.my-portlet .your-price{
+    border-right: 1px solid  #eee;
+    height: 175px;
+}
+/*end my-portlet*/
+.health-box{
+    height: 225px;
+    border-left: 1px solid #EEF1F5;
+}
+.health-not-fond{
+    border: 10px solid lightblue;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    border-radius: 100%;
+
+}
+
+
+/*.page-header.navbar .top-menu .navbar-nav>li.dropdown.open .dropdown-toggle:hover,*/
+/*.page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:hover,*/
+/*.page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:active,*/
+/*.page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:focus{*/
+    /*background-color: transparent;*/
+/*}*/
+
+/* car Info*/
+.my-dashboard .my_carInfo .row{
+    margin-bottom: 10px;
+}
+
+@media (max-width: 767px){
+    .page-header.navbar .top-menu .navbar-nav {
+        background-color: white;
+    }
+    .health-box{
+        border: none;
+    }
+    .my-portlet .your-price{
+        border-right: none;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+    .health-box{
+        border: none;
+    }
+    .my-portlet .your-price{
+        border-right: none;
+    }
+}
+@media (min-width: 992px){
+    .page-header.navbar .page-logo{
+        width: 270px;
+    }
+    .page-sidebar {
+       width: 270px;
+    }
+    .page-content-wrapper .page-content {
+        margin-left: 270px;
+    }
+}
+@media (min-width: 1200px){
+    .my-portlet .car-info-box .img-box{
+        max-height: inherit;
+    }
+}

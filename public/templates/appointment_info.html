@@ -1,0 +1,74 @@
+<div class="page-content">
+    <!-- my cars-->
+    <div class="row my_carInfo">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <a href="#" class="my-portlet">
+                <div class="portlet light my-portlet">
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <a ui-sref="dashboard.appointmentlist" class="btn btn-sm btn-circle dark pull-left">
+                                    <i class="fa fa-long-arrow-left"></i> Back </a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <a  class="btn btn-sm btn-circle red pull-right" ng-click="cancelAppointment(appointmentInfo)">
+                                    <i class="fa fa-trash-o"></i> Delete</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h2><strong>Appointment #{{appointmentInfo.appointment_number}}</strong></h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-3 col-sm-3">
+                                <small class="font-grey-silver">Total Price</small><br>
+                                <!--<strong>1321213</strong>-->
+                                <strong>{{appointmentInfo.total_price}}</strong>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <small class="font-grey-silver">Your car</small><br>
+                                <strong>{{appointmentInfo.year_name}} {{appointmentInfo.brand_name}} {{appointmentInfo.model_name}} {{appointmentInfo.trim_name}}</strong>
+                            </div>
+                            <div class="col-lg-4 col-md-3 col-sm-3">
+                                <small class="font-grey-silver">Quote requested on</small><br>
+                                <!--<strong>Sunday August 7, 2016</strong>-->
+                                <strong ng-bind="formatDate(appointmentInfo.created_at)"></strong>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-3">
+                                <small class="font-grey-silver">Status</small><br>
+                                <strong ng-if="appointmentInfo.status == 'pending'" class="font-blue">{{ appointmentInfo.status }}</strong>
+                                <strong ng-if="appointmentInfo.status == 'Scheduled'" class="font-green">{{ appointmentInfo.status }}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--end my cars-->
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <h4><strong>Your Services</strong></h4>
+                                </div>
+                                <div class="col-lg-8" style="border-left: 1px solid grey">
+                                    <div ng-repeat="item in appointmentServicesInfo">
+                                        <h5><strong>{{item.s_name}}</strong></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
